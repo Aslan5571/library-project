@@ -1,124 +1,137 @@
-/* Общие стили */
-* {
+/* Общие стили для страницы */
+body {
+    background-color: #f4f7f6; /* Светлый фон */
+    font-family: 'Roboto', sans-serif; /* Современный шрифт */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
     color: #333;
-    padding: 20px;
-    line-height: 1.6;
 }
 
+/* Стили для заголовка */
 h1 {
-    font-size: 2.5em;
+    font-size: 2rem; /* Уменьшенный размер для современности */
+    color: #333;
+    margin-bottom: 2rem;
     text-align: center;
-    color: #6c757d;
-    margin-bottom: 20px;
-}
-
-h2 {
-    font-size: 1.8em;
-    color: #6c757d;
-    margin-bottom: 15px;
 }
 
 /* Стили для формы */
 #book-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Сделаем ширину формы умеренной */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: #f0f8ff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    margin: 0 auto 30px auto;
+    gap: 15px;
+    margin-bottom: 2rem;
 }
 
-#book-form input,
-#book-form button {
-    width: 100%;
+/* Стили для полей ввода */
+#book-form input {
     padding: 10px;
-    margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
     outline: none;
+    transition: border-color 0.3s ease;
 }
 
-#book-form input:focus,
-#book-form button:focus {
-    border-color: #6c757d;
+#book-form input:focus {
+    border-color: #007BFF; /* Голубая рамка при фокусе */
 }
 
+/* Стили для кнопки */
 #book-form button {
-    background-color: #6c757d;
+    padding: 10px;
+    background-color: #007BFF; /* Голубая кнопка */
     color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 #book-form button:hover {
-    background-color: #5a6268;
+    background-color: #0056b3; /* Более темная голубая при наведении */
 }
 
 /* Стили для списка книг */
 #books-list {
+    width: 100%;
+    max-width: 400px; /* Та же ширина для списка книг */
     display: flex;
     flex-direction: column;
     gap: 15px;
+    padding: 0 15px;
+    text-align: center;
 }
 
+/* Стили для элемента книги */
 .book {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 20px; /* Увеличен отступ для большего пространства */
     border-radius: 8px;
-    padding: 15px;
-    font-size: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.book strong {
-    color: #6c757d;
-}
-
-.delete-button {
-    background-color: #dc3545;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9rem;
-}
-
-.delete-button:hover {
-    background-color: #c82333;
-}
-
-/* Анимации */
-.book {
-    transition: transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    line-height: 1.6; /* Увеличено межстрочное расстояние */
 }
 
 .book:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px); /* Легкий подъем карточки */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Увеличенная тень при наведении */
 }
 
-/* Мобильная адаптивность */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2em;
-    }
+/* Стили для текста книги */
+.book strong {
+    color: #007BFF; /* Синий цвет для текста */
+    font-weight: 600;
+    display: block; /* Каждое свойство книги будет на новой строке */
+    margin-bottom: 5px; /* Отступ между строками */
+}
 
-    #book-form {
-        width: 90%;
-    }
+/* Кнопка удаления */
+.delete-button {
+    padding: 5px 10px;
+    background-color: #f44336; /* Красная кнопка для удаления */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-    .book {
-        font-size: 0.9rem;
+.delete-button:hover {
+    background-color: #e53935; /* Темный красный при наведении */
+}
+/* Стили для темной темы */
+body.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-theme .book {
+    background-color: #444;
+}
+
+body.dark-theme .delete-button {
+    background-color: #ff5252;
+}
+.book {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
     }
 }
