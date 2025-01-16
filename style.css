@@ -182,25 +182,13 @@ body.dark-theme .book strong {
 
 /* Для кнопки "Переключить тему" в темной теме */
 body.dark-theme #theme-toggle {
-    background-color:#4f69c6; /* Индиго-крайола цвет в темной теме */
+    background-color: #4f69c6; /* Индиго-крайола цвет в темной теме */
     color: #ffffff;
 }
 
 body.dark-theme #theme-toggle:hover {
     background-color: #223885; /* Более темная кнопка при наведении в темной теме */
 }
-
-/* Стили для кнопки переключения темы */
-#theme-toggle {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
 
 /* Для кнопки "Добавить книгу" в темной теме */
 body.dark-theme #book-form button {
@@ -210,4 +198,4 @@ body.dark-theme #book-form button {
 
 body.dark-theme #book-form button:hover {
     background-color: #223885; /* Более темная кнопка при наведении */
-}}
+}
