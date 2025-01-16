@@ -1,0 +1,137 @@
+/* Общие стили для страницы */
+body {
+    background-color: #f4f7f6; /* Светлый фон */
+    font-family: 'Roboto', sans-serif; /* Современный шрифт */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    color: #333;
+}
+
+/* Стили для заголовка */
+h1 {
+    font-size: 2rem; /* Уменьшенный размер для современности */
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Стили для формы */
+#book-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Сделаем ширину формы умеренной */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 2rem;
+}
+
+/* Стили для полей ввода */
+#book-form input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#book-form input:focus {
+    border-color: #007BFF; /* Голубая рамка при фокусе */
+}
+
+/* Стили для кнопки */
+#book-form button {
+    padding: 10px;
+    background-color: #007BFF; /* Голубая кнопка */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#book-form button:hover {
+    background-color: #0056b3; /* Более темная голубая при наведении */
+}
+
+/* Стили для списка книг */
+#books-list {
+    width: 100%;
+    max-width: 400px; /* Та же ширина для списка книг */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 15px;
+    text-align: center;
+}
+
+/* Стили для элемента книги */
+.book {
+    background-color: #fff;
+    padding: 20px; /* Увеличен отступ для большего пространства */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    line-height: 1.6; /* Увеличено межстрочное расстояние */
+}
+
+.book:hover {
+    transform: translateY(-5px); /* Легкий подъем карточки */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Увеличенная тень при наведении */
+}
+
+/* Стили для текста книги */
+.book strong {
+    color: #007BFF; /* Синий цвет для текста */
+    font-weight: 600;
+    display: block; /* Каждое свойство книги будет на новой строке */
+    margin-bottom: 5px; /* Отступ между строками */
+}
+
+/* Кнопка удаления */
+.delete-button {
+    padding: 5px 10px;
+    background-color: #f44336; /* Красная кнопка для удаления */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #e53935; /* Темный красный при наведении */
+}
+/* Стили для темной темы */
+body.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-theme .book {
+    background-color: #444;
+}
+
+body.dark-theme .delete-button {
+    background-color: #ff5252;
+}
+.book {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
