@@ -8,19 +8,19 @@
 </head>
 <body>
     <h1>Welcome to the Library</h1>
-
-    <!-- Кнопка "Добавить книгу" -->
-    <button id="show-form-btn">Добавить книгу</button>
-
-    <!-- Форма добавления книги (изначально скрыта) -->
-    <form id="book-form" style="display: none;">
+    <form id="book-form">
         <input type="text" id="title" placeholder="Название книги" required>
         <input type="text" id="author" placeholder="Автор" required>
         <input type="number" id="pages" placeholder="Количество страниц" required>
         <button type="submit">Добавить книгу</button>
     </form>
 
+    <!-- Добавим блок для отображения добавленных книг -->
+    <div id="books-list">
+        <h2>Добавленные книги:</h2>
+        <!-- Здесь будут появляться добавленные книги -->
+    </div>
+
     <script src="script.js"></script>
-    
 </body>
 </html>
