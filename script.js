@@ -45,11 +45,24 @@ bookForm.addEventListener('submit', function(event) {
     });
 });
 
-// Переключение темы
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
-
-themeToggle.addEventListener('click', function() {
+document.getElementById('theme-toggle').addEventListener('click', () => {
+    const body = document.body;
     body.classList.toggle('dark-theme');
     body.classList.toggle('light-theme');
+});
+
+// Устанавливаем начальную тему
+if (!localStorage.getItem('theme')) {
+    localStorage.setItem('theme', 'light-theme');
+} else {
+    document.body.classList.add(localStorage.getItem('theme'));
+}
+
+// Сохраняем выбор пользователя
+document.getElementById('theme-toggle').addEventListener('click', () => {
+    if (document.body.classList.contains('dark-theme')) {
+        localStorage.setItem('theme', 'dark-theme');
+    } else {
+        localStorage.setItem('theme', 'light-theme');
+    }
 });
